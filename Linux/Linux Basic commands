@@ -1,0 +1,68 @@
+Linux Basic Commands:
+1.0 Man:
+The man command displays the user manual of a particular command that can be run on a linux terminal.
+It shows clearly the command and its details which includes name, synopsis, description, errors, files, version, etc.
+Usage:
+    man <command>
+    man mkdir
+
+2.0 pwd: print working directory
+This command displays the path of the working directory that you are in.
+Usage: 
+pwd
+
+3.0 ls: 
+The command list files in a folder.
+Usage:
+ls /bin (If you add a folder or path to the folder, it will print its contents.
+
+Ls command comes with many options:
+ls –al
+ls –a
+ls – l
+ls –ls
+ls –lrt
+
+4.0 mkdir: command-line utility
+This command is used in creating a new folder/directory: it means make directory. With mkdir, you are able to create multiple directories at once.
+Usage:
+mkdir Tutorial
+You can create multiple folders/directories with one command
+mkdir Tutorial Appmigro Academy
+Let’s explore creating multiple nested directories by adding –p (option)
+mkdir –p Appmigro/Linux
+
+5.0 cd (Change directory)
+Now that we have successfully created directories, let’s examine what is inside them. cd is a command-line execution utility that allows you to move into a folder
+Usage:
+cd Tutorials
+Let’s do:
+cd . (it means check into the current folder)
+    . In Linux means current folder/directory
+   .. Means the directory before the current/present one which means 
+cd .. Takes you one directory up the hierarchy.
+
+6.0 rmdir
+Rmdir means remove directory. This command is used to delete a directory (an empty one)
+Usage:
+rmdir Ubuntu
+
+To delete a directory with files in it we use the command (rm) which is used to delete normal files with the option –rf
+rm –rf Ubuntu2
+
+7.0 touch
+This is a command-line utility that enables the creation of files.
+Usage:
+touch file.txt
+
+8.0 rm
+This command allows the removal of files in Linux.
+Usage:
+rm file.txt
+
+9.0 cp
+The cp command is used to copy files and directories from one point to the other.
+Usage:
+cp file.txt file2.txt
+To copy directories with their contents in it, the –R options needs to be added.
+cp –R Tutorial Appmigro
