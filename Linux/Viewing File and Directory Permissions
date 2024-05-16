@@ -1,0 +1,97 @@
+First, let’s do ls –l
+
+-rwxrw-r—                               owner/user      group    filesize    date/time file was created     filename
+9 letter code giving
+Access rights.
+
+
+4.0	Let us take a look at this permissions carefully: -rwxrw-r—            
+In the left-hand side, it consists of 10-symbol string d,r,w,x, -
+If d is present, it indicates a directory otherwise – will usually be the starting symbol of the string indicating a normal file and if its –L, it’s a link.
+The 9 remaining symbols indicates the permission and are taken as a group of 3
+
+	The left group gives file permission for the user that owns the file or directory.
+	The middle group gives permission for group to whom the file or directory belongs to.
+	The right most group gives permission for everyone else on the system.
+
+The permissions/symbols r,w,x,- have slightly different meanings depending on whether they refer to a file or directories
+
+
+2.0 Access rights on directories.
+r : allows users to list files in the directory
+w: means that users may delete files from the directory or move files into it.
+x: means the right to access files into the directory. This implies that you may read files in the directory provided that you have read permission on the individual files.
+
+3.0 Access rights on files.
+r: indicates read permission
+w: indicates write permission
+x: indicates execution permission
+-: indicates no permission
+
+
+
+
+
+4.0 Changing access rights (chmod)
+
+Symbol          Meaning
+u                     user
+g                     group
+o                     other
+a                     all
+r                      read
+w                    write
+x                      execute
++                     add permission
+_                     take away permission
+
+Usage:
+chmod a + r filename    # everyone can read.
+chmod a + rw filename # everyone can read and write.
+chmod o – rwx filename #others have their read, write, and execute access removed ( not the owner, not the group) 
+
+
+There is another way -> using numeric
+This time we use a digit that represents the permissions of persona. This number value can be a maximum of 7, and it’s calculated in this way.
+
+1: x (Execution permission)
+2: w (Write permission)
+4: r (Read permission)
+
+Let us look at the combination below:
+0 -> no permissions
+1 -> can execute
+2 -> can write
+3 -> can write, execute
+4 -> can read
+5 -> can read, execute
+6 -> can read, write
+7 -> can read, write, and execute
+
+We can use them in pairs of 3, to set the permission of all 3 groups altogether.
+chmod 777 filename
+chmod 755 filename
+chmod 644 filename
+
+5.0	Changing ownership
+Every file/directory in an operating system like linux has an owner
+The owner of a file can do everything with it.
+The owner and the root user can change the owner to another user as well.
+
+To change the owner of a file.
+Usage:
+chown <owner> <file>
+chown adedayo file1.txt
+
+To change the ownership of a directory, and recursively all the files contained in them.
+ chown –R <owner> <file>
+
+To change the ownership of file and the group
+ chown <owner>.<group> <file>
+Usage:
+chown adedayo.devops file1.txt
+
+You can also change the group of a file with 
+chgrp <group> <filename>
+Change group of directory and files in it
+chgrp –R <group> <filename>
