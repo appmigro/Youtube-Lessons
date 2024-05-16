@@ -1,0 +1,83 @@
+Searching and Navigating Content
+1.0	find
+find command is used to search files or directories matching a particular search pattern. It searches recursively
+Usage:
+find . –name ‘.txt’
+The above command will display all files with the extension .txt in the current directory.
+find . –type d –name Tutorial
+The above command will display the directories matching the name Tutorial in the current directory.
+Note: –name is case insensitive
+           -iname can be used to perform case-insensitive search
+To search multiple directories/folders
+find folder1 folder2 –name filename.txt
+There are other options to use in find.
+Check the man page for find to get more.
+
+2.0	mv
+The mv command moves files and directories from one directory to another. If you move a file or directory to a new directory, it retains the base filename.
+Usage:
+mv file.txt directory1
+The above command will move file.txt from the current directory into directory1/
+You can move multiple files:
+mv file1 file2 file3 directory/
+
+
+3.0	ln
+This is a command-line utility that is used to create a hard link or symbolic link (symlink) to an existing file or directory.
+Usage: For hard link
+ln <original link> <link>
+ln linuxdistribution.txt linuxdistro.txt
+
+The new hard link created will not be different from the regular original file. Anytime we edit any of these files, the content will be updated for both.
+If the original file is deleted, the link will still contain the original file content. 
+Downside of hard links: It cannot be linked to directories and external file systems(disk).
+
+Usage: For soft link
+ln –s example.txt example2.txt
+
+If the original file is deleted, the links will be broken.
+Advantage: the soft link can link to other file systems and to directories.
+ 
+4.0	grep
+This is one of many standard UNIX Utilities. It searches file for special words or patterns 
+Usage:
+grep good filename.txt
+grep –I good filename.txt (This will ignore all case sensitivity).
+
+5.0	wc 
+It is a command to do word counts on text/files
+Usage:
+wc –w filename (prints out how many words with the filename)
+wc –l filename(prints out how many lines with the filename)
+wc –m filename (prints out how many characters)
+
+6.0	diff
+If we have 2 files with “almost” the same information. You can use “diff” to check the difference.
+Usage:
+diff filename1.txt filename2.txt
+
+7.0	less
+The less command shows the content of a file in a nice and interactive UI
+Usage:
+less <filename>
+
+To navigate:
+-	up keys: to go up in the file
+-	Down keys: to go down
+-	Space bar + b: Navigate page by page
+-	G: Jump to the end of file
+-	g:  Jump back to the start
+
+8.0	tail
+The tail command open the file at the end and watches for changes.
+A great example: watching of big files.
+Usage:
+tail –f /var/log/system.log
+
+Point to the last 10 lines in a file.
+tail –n 10 <filename>
+
+9.0	cat
+The cat command is a standard command line utility that displays the content of a file.
+Usage: 
+cat filename.txt
