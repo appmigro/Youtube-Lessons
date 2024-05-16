@@ -1,0 +1,15 @@
+1.0	The (>): This “>” means output text into a file.
+Usage:
+Echo “How are you?” > greetings.txt
+
+2.0	The (>>): This means append texts to a file.
+Usage:
+Echo “Today is a good day” >> greetins.txt
+
+3.0	Pipes: The primary purpose of the pipe command is to connect the output of command directly into the input of another (|)
+Usage:
+whoami | sort
+The above command will display the name of the system user
+
+whoami | wc -w
+The above command will display the word count of the w which in this case is 0.
